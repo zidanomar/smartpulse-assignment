@@ -5,7 +5,7 @@ import DataTable from './components/DataTable';
 import Footer from './components/Footer';
 
 const url =
-  '/transparency/service/market/intra-day-trade-history?endDate=2022-01-26&startDate=2022-01-26';
+  '/api/transparency/service/market/intra-day-trade-history?endDate=2022-01-26&startDate=2022-01-26';
 
 function App() {
   const [isFetching, setIsFetching] = useState(true);
@@ -90,7 +90,7 @@ function App() {
         setIsFetching(false);
       })
       .catch((err) => {
-        console.error(err);
+        console.log(err.response);
         setIsFetching(false);
       });
   };
